@@ -6,19 +6,20 @@ import "./SearchEngine.css";
 export default function SearchEngine() {
   const [city, setCity] = useState("Amsterdam");
   const [displayCity, setDisplayCity] = useState("Amsterdam");
-  const [weather, setWeather] = useState({});
+  // const [weather, setWeather] = useState({});
 
   let apiKey = "427b64eee1edb35b88796269421b55f1";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   function displayWeather(response) {
-    setWeather({
-      temperature: response.data.main.temp,
-      feelslike: response.data.main.feels_like,
-      humidity: response.data.main.humidity,
-      windspeed: response.data.wind.speed,
-    });
+    console.log(response.data);
+    //  setWeather({
+    //      temperature: response.data.main.temp,
+    //     feelslike: response.data.main.feels_like,
+    //     humidity: response.data.main.humidity,
+    //     windspeed: response.data.wind.speed,
+    //   });
   }
 
   function handleSubmit(event) {
@@ -80,7 +81,7 @@ export default function SearchEngine() {
             className="weather-icon"
           />
           <span>
-            <strong className="current-temp">{weather.temperature}</strong>
+            <strong className="current-temp">19</strong>
             <span className="units">
               <a href="/" className="active">
                 °C{" "}
@@ -91,9 +92,9 @@ export default function SearchEngine() {
         </div>
         <div className="col-7">
           <ul className="current-conditions">
-            <li>Feels like: {Math.round(weather.feelslike)}°C</li>
-            <li>Humidity: {weather.humidity}%</li>
-            <li>Windspeed: {weather.windspeed * 1.852}km/h</li>
+            <li>Feels like: 18°C</li>
+            <li>Humidity: 83%</li>
+            <li>Windspeed: 18km/h</li>
           </ul>
         </div>
       </div>
