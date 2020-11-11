@@ -1,0 +1,44 @@
+.Search {
+}
+
+.button-search-current,
+.search-input,
+.submit-button {
+  border-radius: 8px;
+  border: 2px groove purple;
+  color: purple;
+  background-color: #e5fdfe;
+}
+
+:hover.button-search-current,
+:hover.submit-button {
+  border-radius: 8px;
+  border: 2px groove purple;
+  background: rgb(53, 0, 53);
+  color: white;
+  transition: ease-in-out;
+}
+
+.city-and-time {
+  padding-top: 15px;
+}
+
+.city-header {
+  font-size: 40px;
+  margin: 0;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.last-updated-time {
+  padding: 10px;
+  text-align: right;
+}
+
+.current-time {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.text-last-updated {
+  font-size: 15px;
+}
