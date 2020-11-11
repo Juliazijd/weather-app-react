@@ -1,19 +1,36 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 import "./SearchEngine.css";
 
 export default function SearchEngine() {
-  const [city, setCity] = useState();
+  const [city, setCity] = useState("Amsterdam");
   const [displayCity, setDisplayCity] = useState("Amsterdam");
+  const [weather, setWeather] = useState({});
+
+  let apiKey = "427b64eee1edb35b88796269421b55f1";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+  function displayWeather(response) {
+    setWeather({
+      temperature: response.data.main.temp,
+      feelslike: response.data.main.feels_like,
+      humidity: response.data.main.humidity,
+      windspeed: response.data.wind.speed,
+    });
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
     setDisplayCity(city);
   }
 
-  function displaySearch(event) {
+  function updateSubmit(event) {
     setCity(event.target.value);
   }
+
+  axios.get(apiUrl).then(displayWeather);
 
   return (
     <div className="SearchEngine">
@@ -26,7 +43,7 @@ export default function SearchEngine() {
               className="search-input w-100"
               autocomplete={false}
               autofocus={true}
-              onChange={displaySearch}
+              onChange={updateSubmit}
             />
           </div>
           <div className="col-3">
@@ -63,9 +80,9 @@ export default function SearchEngine() {
             className="weather-icon"
           />
           <span>
-            <strong className="current-temp">19</strong>
+            <strong className="current-temp">{weather.temperature}</strong>
             <span className="units">
-              <a href="/" class="active">
+              <a href="/" className="active">
                 °C{" "}
               </a>{" "}
               | <a href="/">°F </a>
@@ -74,9 +91,9 @@ export default function SearchEngine() {
         </div>
         <div className="col-7">
           <ul className="current-conditions">
-            <li>Feels like: 18°C</li>
-            <li>Humidity: 83%</li>
-            <li>Windspeed: 18km/h</li>
+            <li>Feels like: {Math.round(weather.feelslike)}°C</li>
+            <li>Humidity: {weather.humidity}%</li>
+            <li>Windspeed: {weather.windspeed * 1.852}km/h</li>
           </ul>
         </div>
       </div>
