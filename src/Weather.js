@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Forecast from "Forecast";
-import ReactAnimatedWeather from "react-animated-weather";
 
 import "./Weather.css";
 
@@ -10,12 +8,10 @@ export default function SearchEngine() {
   const [displayCity, setDisplayCity] = useState("Amsterdam");
   const [weather, setWeather] = useState({});
 
-  let apiKey = "427b64eee1edb35b88796269421b55f1";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
   function displayWeather(response) {
     setWeather({
+      description: response.data.weather.description,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather.icon}@2x.png`,
       temperature: response.data.main.temp,
       feelslike: response.data.main.feels_like,
       humidity: response.data.main.humidity,
@@ -25,14 +21,19 @@ export default function SearchEngine() {
 
   function handleSubmit(event) {
     event.preventDefault();
+      let apiKey = "427b64eee1edb35b88796269421b55f1";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
     setDisplayCity(city);
+
+      axios.get(apiUrl).then(displayWeather);
   }
 
   function updateSubmit(event) {
     setCity(event.target.value);
   }
 
-  axios.get(apiUrl).then(displayWeather);
 
   return (
     <div className="Weather">
@@ -75,12 +76,8 @@ export default function SearchEngine() {
       </div>
       <div className="CurrentWeather row">
         <div className="col-4 current-weather">
-          <h4 className="description">Cloudy</h4>
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="Cloudy"
-            className="weather-icon"
-          />
+          <h4 className="description">{weather.description}</h4>
+          <span>{weather.icon}</span>
           <span>
             <strong className="current-temp">
               {Math.round(weather.temperature)}
@@ -101,7 +98,59 @@ export default function SearchEngine() {
           </ul>
         </div>
       </div>
-      <Forecast />
+      <div className="Forecast">
+        <h4 className="forecast-header">Forecast</h4>
+        <div className="row forecast">
+          <div className="col-2">
+            <ul>
+              <li>Sat</li>
+              <li>19°C|°F</li>
+              <li>icon</li>
+              <li>18km/h</li>
+            </ul>
+          </div>
+          <div className="col-2">
+            <ul>
+              <li>Sun</li>
+              <li>19°C|°F</li>
+              <li>icon</li>
+              <li>18km/h</li>
+            </ul>
+          </div>
+          <div className="col-2">
+            <ul>
+              <li>Mon</li>
+              <li>19°C|°F</li>
+              <li>icon</li>
+              <li>18km/h</li>
+            </ul>
+          </div>
+          <div className="col-2">
+            <ul>
+              <li>Tue</li>
+              <li>19°C|°F</li>
+              <li>icon</li>
+              <li>18km/h</li>
+            </ul>
+          </div>
+          <div className="col-2">
+            <ul>
+              <li>Wed</li>
+              <li>19°C|°F</li>
+              <li>icon</li>
+              <li>18km/h</li>
+            </ul>
+          </div>
+          <div className="col-2">
+            <ul>
+              <li>Thu</li>
+              <li>19°C|°F</li>
+              <li>icon</li>
+              <li>18km/h</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
