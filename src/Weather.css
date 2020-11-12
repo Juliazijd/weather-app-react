@@ -1,3 +1,8 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 .button-search-current,
 .search-input,
 .submit-button {
@@ -38,4 +43,23 @@
 
 .text-last-updated {
   font-size: 15px;
+}
+
+.current-temp {
+  font-size: 35px;
+}
+
+.units {
+  position: relative;
+  left: 4px;
+  top: -12px;
+}
+
+.current-conditions {
+  padding-top: 20px;
+}
+
+.forecast {
+  text-align: center;
+  margin: 0;
 }

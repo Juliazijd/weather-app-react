@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Forecast from "Forecast";
+import ReactAnimatedWeather from "react-animated-weather";
 
-import "./SearchEngine.css";
+import "./Weather.css";
 
 export default function SearchEngine() {
   const [city, setCity] = useState("Amsterdam");
   const [displayCity, setDisplayCity] = useState("Amsterdam");
-  // const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState({});
 
   let apiKey = "427b64eee1edb35b88796269421b55f1";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   function displayWeather(response) {
-    console.log(response.data);
-    //  setWeather({
-    //      temperature: response.data.main.temp,
-    //     feelslike: response.data.main.feels_like,
-    //     humidity: response.data.main.humidity,
-    //     windspeed: response.data.wind.speed,
-    //   });
+    setWeather({
+      temperature: response.data.main.temp,
+      feelslike: response.data.main.feels_like,
+      humidity: response.data.main.humidity,
+      windspeed: response.data.wind.speed,
+    });
   }
 
   function handleSubmit(event) {
@@ -34,7 +35,7 @@ export default function SearchEngine() {
   axios.get(apiUrl).then(displayWeather);
 
   return (
-    <div className="SearchEngine">
+    <div className="Weather">
       <form onSubmit={handleSubmit}>
         <div className="form-row">
           <div className="col-4">
@@ -73,7 +74,7 @@ export default function SearchEngine() {
         </div>
       </div>
       <div className="CurrentWeather row">
-        <div className="col-5 current-weather">
+        <div className="col-4 current-weather">
           <h4 className="description">Cloudy</h4>
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
@@ -81,7 +82,9 @@ export default function SearchEngine() {
             className="weather-icon"
           />
           <span>
-            <strong className="current-temp">19</strong>
+            <strong className="current-temp">
+              {Math.round(weather.temperature)}
+            </strong>
             <span className="units">
               <a href="/" className="active">
                 °C{" "}
@@ -90,14 +93,15 @@ export default function SearchEngine() {
             </span>
           </span>
         </div>
-        <div className="col-7">
+        <div className="col-8">
           <ul className="current-conditions">
-            <li>Feels like: 18°C</li>
-            <li>Humidity: 83%</li>
-            <li>Windspeed: 18km/h</li>
+            <li>Feels like: {Math.round(weather.feelslike)}°C</li>
+            <li>Humidity: {weather.humidity}%</li>
+            <li>Windspeed: {Math.round(weather.windspeed * 1.852)}km/h</li>
           </ul>
         </div>
       </div>
+      <Forecast />
     </div>
   );
 }
