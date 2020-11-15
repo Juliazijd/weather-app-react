@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Forecast from "./Forecast";
 
 import "./Weather.css";
 
 export default function SearchEngine() {
-  const [city, setCity] = useState("Amsterdam");
-  const [displayCity, setDisplayCity] = useState("Amsterdam");
+  const [city, setCity] = useState(" ");
   const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
     setWeather({
+      city: response.data.name,
       description: response.data.weather.description,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather.icon}@2x.png`,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temperature: response.data.main.temp,
       feelslike: response.data.main.feels_like,
       humidity: response.data.main.humidity,
@@ -25,15 +26,12 @@ export default function SearchEngine() {
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-    setDisplayCity(city);
-
       axios.get(apiUrl).then(displayWeather);
   }
 
   function updateSubmit(event) {
     setCity(event.target.value);
   }
-
 
   return (
     <div className="Weather">
@@ -64,7 +62,7 @@ export default function SearchEngine() {
       <div className="city-and-time row">
         <div className="col-6">
           <h3 className="city-header">
-            <strong>{displayCity}</strong>
+            <strong>{weather.city}</strong>
           </h3>
         </div>
         <div className="col-6">
@@ -77,7 +75,7 @@ export default function SearchEngine() {
       <div className="CurrentWeather row">
         <div className="col-4 current-weather">
           <h4 className="description">{weather.description}</h4>
-          <span>{weather.icon}</span>
+          <span><img src={weather.icon} alt={weather.description}/></span>
           <span>
             <strong className="current-temp">
               {Math.round(weather.temperature)}
@@ -97,60 +95,9 @@ export default function SearchEngine() {
             <li>Windspeed: {Math.round(weather.windspeed * 1.852)}km/h</li>
           </ul>
         </div>
+        
       </div>
-      <div className="Forecast">
-        <h4 className="forecast-header">Forecast</h4>
-        <div className="row forecast">
-          <div className="col-2">
-            <ul>
-              <li>Sat</li>
-              <li>19°C|°F</li>
-              <li>icon</li>
-              <li>18km/h</li>
-            </ul>
-          </div>
-          <div className="col-2">
-            <ul>
-              <li>Sun</li>
-              <li>19°C|°F</li>
-              <li>icon</li>
-              <li>18km/h</li>
-            </ul>
-          </div>
-          <div className="col-2">
-            <ul>
-              <li>Mon</li>
-              <li>19°C|°F</li>
-              <li>icon</li>
-              <li>18km/h</li>
-            </ul>
-          </div>
-          <div className="col-2">
-            <ul>
-              <li>Tue</li>
-              <li>19°C|°F</li>
-              <li>icon</li>
-              <li>18km/h</li>
-            </ul>
-          </div>
-          <div className="col-2">
-            <ul>
-              <li>Wed</li>
-              <li>19°C|°F</li>
-              <li>icon</li>
-              <li>18km/h</li>
-            </ul>
-          </div>
-          <div className="col-2">
-            <ul>
-              <li>Thu</li>
-              <li>19°C|°F</li>
-              <li>icon</li>
-              <li>18km/h</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <Forecast />
     </div>
   );
 }
