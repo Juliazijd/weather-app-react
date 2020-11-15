@@ -100,4 +100,5 @@ export default function SearchEngine() {
       <Forecast />
     </div>
   );
+
 }
