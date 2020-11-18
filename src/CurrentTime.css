@@ -1,0 +1,13 @@
+.WeatherCurrent .last-updated-time {
+  padding: 10px;
+  text-align: right;
+}
+
+.WeatherCurrent .current-time {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.WeatherCurrent .text-last-updated {
+  font-size: 15px;
+}

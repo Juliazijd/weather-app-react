@@ -30,7 +30,7 @@
 .Weather :hover.submit-button {
   border-radius: 8px;
   border: 2px groove purple;
-  background: rgb(53, 0, 53);
+  background: #350035;
   color: white;
   transition: ease-in-out;
 }

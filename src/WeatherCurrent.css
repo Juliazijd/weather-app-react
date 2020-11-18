@@ -1,37 +1,23 @@
-.Weather .city-and-time {
+.WeatherCurrent .city-and-time {
   padding-top: 15px;
 }
 
-.Weather .city-header {
+.WeatherCurrent .city-header {
   font-size: 40px;
   margin: 0;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-.Weather .last-updated-time {
-  padding: 10px;
-  text-align: right;
-}
-
-.Weather .current-time {
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.Weather .text-last-updated {
-  font-size: 15px;
-}
-
-.Weather .current-temp {
+.WeatherCurrent .current-temp {
   font-size: 35px;
 }
 
-.Weather .units {
+.WeatherCurrent .units {
   position: relative;
   left: 4px;
   top: -12px;
 }
 
-.Weather .current-conditions {
+.WeatherCurrent .current-conditions {
   padding-top: 20px;
 }
