@@ -1,6 +1,8 @@
 import React from "react";
 import CurrentTime from "./CurrentTime";
 
+import "./WeatherCurrent.css";
+
 export default function WeatherCurrent(props) {
 
     return(

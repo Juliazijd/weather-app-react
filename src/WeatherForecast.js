@@ -1,6 +1,8 @@
 import React from "react";
 import ReactAnimatedWeather from 'react-animated-weather';
 
+import "./WeatherForecast.css";
+
 export default function Forecast() {
 
       return  ( 
@@ -13,7 +15,7 @@ export default function Forecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="CLEAR_DAY" 
-    color="purple"
+    color="#350035"
     size={50}
     animate={true}
   /></li>
@@ -26,7 +28,7 @@ export default function Forecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="CLOUDY" 
-    color="purple"
+    color="#350035"
     size={50}
     animate={true}
   /></li>
@@ -39,7 +41,7 @@ export default function Forecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="CLOUDY" 
-    color="purple"
+    color="#350035"
     size={50}
     animate={true}
   /></li>
@@ -52,7 +54,7 @@ export default function Forecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="FOG" 
-    color="purple"
+    color="#350035"
     size={50}
     animate={true}
   /></li>
@@ -65,7 +67,7 @@ export default function Forecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="RAIN" 
-    color="purple"
+    color="#350035"
     size={50}
     animate={true}
   /></li>
@@ -78,7 +80,7 @@ export default function Forecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="PARTLY_CLOUDY_DAY" 
-    color="purple"
+    color="#350035"
     size={50}
     animate={true}
   /></li>
