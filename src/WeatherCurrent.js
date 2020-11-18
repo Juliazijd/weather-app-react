@@ -1,4 +1,5 @@
 import React from "react";
+import CurrentTime from "./CurrentTime";
 
 export default function WeatherCurrent(props) {
 
@@ -12,14 +13,16 @@ export default function WeatherCurrent(props) {
         </div>
         <div className="col-6">
           <div className="last-updated-time">
-            <div className="current-time">{props.data.date}</div>
+            <div className="current-time">
+              <CurrentTime date={props.data.date}/>
+              </div>
             <div className="text-last-updated">(last updated)</div>
           </div>
         </div>
       </div>
-      <div className="CurrentWeather row">
-        <div className="col-4 current-weather">
-          <h4 className="description">{props.data.description}</h4>
+      <div className="row">
+        <div className="col-5 current-weather">
+          <h4 className="description text-capitalize">{props.data.description}</h4>
           <span><img src={props.data.icon} alt={props.data.description}/></span>
           <span>
             <strong className="current-temp">
@@ -33,7 +36,7 @@ export default function WeatherCurrent(props) {
             </span>
           </span>
         </div>
-        <div className="col-8">
+        <div className="col-7">
           <ul className="current-conditions">
             <li>Feels like: {Math.round(props.data.feelslike)}°C</li>
             <li>Humidity: {props.data.humidity}%</li>
