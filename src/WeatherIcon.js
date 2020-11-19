@@ -30,7 +30,7 @@ return (
     <ReactAnimatedWeather
     icon={iconCodeMapping[props.icon]}
     color="#350035"
-    size={60}
+    size={70}
     animate={true}
   />
   </span>

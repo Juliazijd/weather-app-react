@@ -13,6 +13,7 @@ export default function WeatherCurrent(props) {
           <h3 className="city-header">
             <strong>{props.data.city}</strong>
           </h3>
+   <h5 className="description text-capitalize">{props.data.description}</h5>
         </div>
         <div className="col-6">
           <div className="last-updated-time">
@@ -25,7 +26,6 @@ export default function WeatherCurrent(props) {
       </div>
       <div className="row">
         <div className="col-4 current-weather">
-          <h4 className="description text-capitalize">{props.data.description}</h4>
           <span>
             <WeatherIcon  icon={props.data.icon}/></span>
           <span>

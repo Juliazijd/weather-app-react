@@ -8,9 +8,12 @@
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 
+.WeatherCurrent .description {
+  margin: 5px 0;
+}
+
 .WeatherCurrent .current-temp {
   font-size: 35px;
-  line-height: 2px;
 }
 
 .WeatherCurrent .units {
@@ -20,5 +23,5 @@
 }
 
 .WeatherCurrent .current-conditions {
-  padding-top: 10px;
+  padding-top: 16px;
 }

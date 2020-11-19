@@ -14,7 +14,7 @@ export default function SearchEngine(props) {
     setWeather({
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
-      description: response.data.weather.description,
+      description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
       temperature: response.data.main.temp,
       feelslike: response.data.main.feels_like,
