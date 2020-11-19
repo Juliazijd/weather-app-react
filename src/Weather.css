@@ -34,3 +34,12 @@
   color: white;
   transition: ease-in-out;
 }
+
+.Weather .current-time,
+.Weather .text-last-updated {
+  text-align: right;
+}
+
+.Weather .text-last-updated {
+  font-size: 15px;
+}

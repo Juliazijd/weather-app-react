@@ -3,10 +3,10 @@ import ReactAnimatedWeather from 'react-animated-weather';
 
 import "./WeatherForecast.css";
 
-export default function Forecast() {
+export default function WeatherForecast() {
 
       return  ( 
-      <div className="Forecast">
+      <div className="WeatherForecast">
         <h4 className="forecast-header">Forecast</h4>
         <div className="row forecast">
           <div className="col-2">

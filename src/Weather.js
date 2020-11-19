@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import CurrentTime from "./CurrentTime";
 import WeatherCurrent from "./WeatherCurrent";
 import WeatherForecast from "./WeatherForecast";
 
@@ -45,7 +46,7 @@ if (loaded) {
     <div className="Weather">
       <form onSubmit={handleSubmit}>
         <div className="form-row">
-          <div className="col-4">
+          <div className="col-6">
             <input
               type="search"
               placeholder="Enter any city..."
@@ -58,13 +59,12 @@ if (loaded) {
           <div className="col-3">
             <input type="submit" value="Search" className="submit-button" />
           </div>
-          <div className="col-5">
-            <input
-              type="submit"
-              value="Check current location"
-              className="button-search-current"
-            />
-          </div>
+          <div>
+              <strong className="current-time">
+              <CurrentTime date={weather.date}/> 
+              </strong>  
+            <div className="text-last-updated"> (last updated)</div>
+        </div>
         </div>
       </form>
       <WeatherCurrent data={weather}/>

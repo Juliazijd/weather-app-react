@@ -12,8 +12,8 @@ export default function CurrentTime(props){
      minutes = `0${minutes}`
 
     return ( 
-    <span className="CurrentTime">
+    <div className="CurrentTime">
     {day} {hours}:{minutes}
-        </span>
+        </div>
         );
 }

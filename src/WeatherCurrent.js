@@ -1,5 +1,4 @@
 import React from "react";
-import CurrentTime from "./CurrentTime";
 import WeatherIcon from "./WeatherIcon";
 
 import "./WeatherCurrent.css";
@@ -17,10 +16,7 @@ export default function WeatherCurrent(props) {
         </div>
         <div className="col-6">
           <div className="last-updated-time">
-            <div className="current-time">
-              <CurrentTime date={props.data.date}/>
-              </div>
-            <div className="text-last-updated">(last updated)</div>
+
           </div>
         </div>
       </div>
