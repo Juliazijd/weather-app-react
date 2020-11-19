@@ -10,6 +10,7 @@
 
 .WeatherCurrent .current-temp {
   font-size: 35px;
+  line-height: 2px;
 }
 
 .WeatherCurrent .units {
@@ -19,5 +20,5 @@
 }
 
 .WeatherCurrent .current-conditions {
-  padding-top: 20px;
+  padding-top: 10px;
 }

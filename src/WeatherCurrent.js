@@ -24,7 +24,7 @@ export default function WeatherCurrent(props) {
         </div>
       </div>
       <div className="row">
-        <div className="col-5 current-weather">
+        <div className="col-4 current-weather">
           <h4 className="description text-capitalize">{props.data.description}</h4>
           <span>
             <WeatherIcon  icon={props.data.icon}/></span>
@@ -40,7 +40,7 @@ export default function WeatherCurrent(props) {
             </span>
           </span>
         </div>
-        <div className="col-7">
+        <div className="col-8">
           <ul className="current-conditions">
             <li>Feels like: {Math.round(props.data.feelslike)}°C</li>
             <li>Humidity: {props.data.humidity}%</li>
