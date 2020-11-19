@@ -15,7 +15,7 @@ export default function WeatherForecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="CLEAR_DAY" 
-    color="#350035"
+    color="purple"
     size={50}
     animate={true}
   /></li>
@@ -28,7 +28,7 @@ export default function WeatherForecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="CLOUDY" 
-    color="#350035"
+    color="purple"
     size={50}
     animate={true}
   /></li>
@@ -41,7 +41,7 @@ export default function WeatherForecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="CLOUDY" 
-    color="#350035"
+    color="purple"
     size={50}
     animate={true}
   /></li>
@@ -54,7 +54,7 @@ export default function WeatherForecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="FOG" 
-    color="#350035"
+    color="purple"
     size={50}
     animate={true}
   /></li>
@@ -67,7 +67,7 @@ export default function WeatherForecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="RAIN" 
-    color="#350035"
+    color="purple"
     size={50}
     animate={true}
   /></li>
@@ -80,7 +80,7 @@ export default function WeatherForecast() {
               <li>19°C|°F</li>
               <li><ReactAnimatedWeather
     icon="PARTLY_CLOUDY_DAY" 
-    color="#350035"
+    color="purple"
     size={50}
     animate={true}
   /></li>

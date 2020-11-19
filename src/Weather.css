@@ -17,16 +17,24 @@
   min-width: 600px;
 }
 
-.Weather .button-search-current,
-.Weather .search-input,
-.Weather .submit-button {
+.Weather form {
+  margin: 0;
+}
+
+.Weather .search-input {
   border-radius: 8px;
   border: 2px groove purple;
   color: purple;
   background-color: #e5fdfe;
 }
 
-.Weather :hover.button-search-current,
+.Weather .submit-button {
+  border-radius: 8px;
+  border: 2px groove purple;
+  color: #e5fdfe;
+  background-color: purple;
+}
+
 .Weather :hover.submit-button {
   border-radius: 8px;
   border: 2px groove purple;

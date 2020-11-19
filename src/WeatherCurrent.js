@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
+import CurrentTemp from "./CurrentTemp";
 
 import "./WeatherCurrent.css";
 
@@ -24,17 +25,7 @@ export default function WeatherCurrent(props) {
         <div className="col-4 current-weather">
           <span>
             <WeatherIcon  icon={props.data.icon}/></span>
-          <span>
-            <strong className="current-temp">
-              {Math.round(props.data.temperature)}
-            </strong>
-            <span className="units">
-              <a href="/" className="active">
-                °C{" "}
-              </a>{" "}
-              | <a href="/">°F </a>
-            </span>
-          </span>
+ <CurrentTemp temp={props.data.temperature} />
         </div>
         <div className="col-8">
           <ul className="current-conditions">
