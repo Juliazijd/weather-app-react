@@ -13,6 +13,8 @@ export default function SearchEngine(props) {
   const [loaded, setLoaded] = useState(false);
 
   function displayWeather(response) {
+    console.log(response.data);
+    
     setWeather({
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
@@ -23,7 +25,6 @@ export default function SearchEngine(props) {
       humidity: response.data.main.humidity,
       windspeed: response.data.wind.speed,
     });
-    setLoaded(true);
   }
 
   function displayForecast(response) {

@@ -1,9 +1,18 @@
-.Weatherforcast {
+.WeatherForecast h4 {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.WeatherForecast .forecast {
   text-align: center;
   margin: 0;
 }
 
-.WeatherForecast h4 {
-  font-weight: bold;
-  margin-top: 20px;
+.WeatherForecast canvas {
+  width: 50px;
+}
+
+.WeatherForecast a {
+  color: purple;
+  text-decoration: underline;
 }
