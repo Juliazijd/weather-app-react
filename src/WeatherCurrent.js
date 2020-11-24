@@ -10,7 +10,7 @@ export default function WeatherCurrent(props) {
         <div className="WeatherCurrent">
           <div className="city-and-time row">
         <div className="col-6">
-          <span>The current weather in...</span>
+          <span className="current-weather-text">The current weather in...</span>
           <h3 className="city-header">
             <strong>{props.data.city}</strong>
           </h3>

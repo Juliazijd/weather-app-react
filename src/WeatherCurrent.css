@@ -2,6 +2,10 @@
   padding-top: 15px;
 }
 
+.current-weather-text {
+  font-size: 16px;
+}
+
 .WeatherCurrent .city-header {
   font-size: 40px;
   margin-bottom: 20px;
