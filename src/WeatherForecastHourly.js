@@ -24,7 +24,7 @@ if (unit === "celsius") {
    <div className="WeatherForecastHourly col-2">
           <ul> 
               <li>{hours}:00</li>
-              <li>{Math.round(props.data.main.temp)}°C|<a href="/" onClick={displayFahrenheit}>°F</a></li>
+              <li>{Math.round(props.data.main.temp)}°C | <a href="/" onClick={displayFahrenheit}>°F</a></li>
               <li><WeatherIcon icon={props.data.weather[0].icon} /></li>
               <li>{Math.round(props.data.wind.speed * 1.852)}km/h</li>
             </ul>

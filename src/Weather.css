@@ -43,11 +43,8 @@
   transition: ease-in-out;
 }
 
-.Weather .current-time,
 .Weather .text-last-updated {
-  text-align: right;
-}
-
-.Weather .text-last-updated {
+  color: purple;
   font-size: 15px;
+  text-align: right;
 }
