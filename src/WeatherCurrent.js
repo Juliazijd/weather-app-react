@@ -8,19 +8,11 @@ export default function WeatherCurrent(props) {
 
     return(
         <div className="WeatherCurrent">
-          <div className="city-and-time row">
-        <div className="col-6">
-          <span className="current-weather-text">The current weather in...</span>
           <h3 className="city-header">
             <strong>{props.data.city}</strong>
           </h3>
    <h5 className="description text-capitalize">{props.data.description}</h5>
-        </div>
-        <div className="col-6">
           <div className="last-updated-time">
-
-          </div>
-        </div>
       </div>
       <div className="row">
         <div className="col-4 current-weather">
