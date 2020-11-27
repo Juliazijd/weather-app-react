@@ -3,7 +3,7 @@ import WeatherForecastHourly from "./WeatherForecastHourly";
 import "./WeatherForecast.css";
 
 export default function WeatherForecast(props) {
-
+console.log(props.data.list);
   return  ( 
       <div className="WeatherForecast">
         <h4 className="forecast-header">Forecast</h4>
