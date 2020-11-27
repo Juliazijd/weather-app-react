@@ -44,7 +44,7 @@
 }
 
 .Weather .text-last-updated {
-  color: purple;
+  color: rgb(53, 0, 53);
   font-size: 15px;
   text-align: right;
 }
